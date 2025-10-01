@@ -17,25 +17,29 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/patients")
 @Tag(name = "Patient", description = "API for managing Patients")
-public class PatientController {
+public class PatientController
+{
 
     private final PatientService patientService;
 
-    public PatientController(PatientService patientService) {
+    public PatientController(PatientService patientService)
+    {
         this.patientService = patientService;
     }
 
     @GetMapping
     @Operation(summary = "Get Patients")
-    public ResponseEntity<List<PatientResponseDTO>> getPatients() {
+    public ResponseEntity<List<PatientResponseDTO>> getPatients()
+    {
         return ResponseEntity.ok().body(patientService.getPatients());
     }
 
     @PostMapping
     @Operation(summary = "Create a new Patient")
     public ResponseEntity<PatientResponseDTO> createPatient
-            (@Validated({Default.class, CreatePatientValidationGroup.class})
-             @RequestBody PatientRequestDTO patientRequestDTO) {
+        (@Validated({Default.class, CreatePatientValidationGroup.class})
+        @RequestBody PatientRequestDTO patientRequestDTO)
+    {
         PatientResponseDTO patientResponseDTO = patientService.createPatient(patientRequestDTO);
         return ResponseEntity.ok().body(patientResponseDTO);
     }
@@ -43,15 +47,17 @@ public class PatientController {
     @PutMapping("/{id}")
     @Operation(summary = "Update a Patient")
     public ResponseEntity<PatientResponseDTO> updatePatient(@PathVariable UUID id,
-                                                            @Validated({Default.class}) @RequestBody PatientRequestDTO patientRequestDTO) {
+        @Validated({Default.class}) @RequestBody PatientRequestDTO patientRequestDTO)
+    {
         PatientResponseDTO patientResponseDTO = patientService.updatePatient(id,
-                patientRequestDTO);
+            patientRequestDTO);
         return ResponseEntity.ok().body(patientResponseDTO);
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete a patient")
-    public ResponseEntity<Void> deletePatient(@PathVariable UUID id) {
+    public ResponseEntity<Void> deletePatient(@PathVariable UUID id)
+    {
         patientService.deletePatient(id);
         return ResponseEntity.noContent().build();
     }

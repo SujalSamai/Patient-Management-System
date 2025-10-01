@@ -6,7 +6,8 @@ import com.sujalsamai.patient_service.model.Patient;
 
 import java.time.LocalDate;
 
-public class PatientMapper {
+public class PatientMapper
+{
 
     public static PatientResponseDTO toDto(Patient patient)
     {
