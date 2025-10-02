@@ -1,0 +1,21 @@
+# Patient Management System
+This project is specifically created to learn the following technologies while building an entry level application for managing patients:
+- SpringBoot
+- Working with H2 Databases
+- Creating Docker images & containers of microservices
+- Using Postgres Database
+- Request Validations
+- Custom Exception handling
+- CRUD APIs & OpenAPI documentation
+- gRPC calls using Protobuf
+- Apache Kafka
+- Spring Cloud API Gateway
+- Authentication & Authorization
+- Spring Security Password encoder
+- Using JWT Tokens
+- Integration testing
+- AWS Introduction
+- IaC AWS Cloudformation
+- VPC, DBS, MSK cluster, ECS cluster
+- Load Balancing
+- Deployment to localstack
