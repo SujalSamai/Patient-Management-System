@@ -1,6 +1,6 @@
 package com.sujalsamai.auth_service.service;
 
-import com.sujalsamai.auth_service.UserRepository;
+import com.sujalsamai.auth_service.repository.UserRepository;
 import com.sujalsamai.auth_service.model.User;
 import org.springframework.stereotype.Service;
 

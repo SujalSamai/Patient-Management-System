@@ -1,4 +1,4 @@
-package com.sujalsamai.auth_service;
+package com.sujalsamai.auth_service.repository;
 
 import com.sujalsamai.auth_service.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
